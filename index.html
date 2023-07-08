@@ -5,10 +5,14 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZ7NMQXGEB"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
-        gtag('config', 'G-EZ7NMQXGEB');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js' , new Date());
+
+        gtag('config' , 'G-EZ7NMQXGEB');
     </script>
 </head>
 <style>
@@ -85,25 +89,62 @@
     }
 
     @keyframes color-change {
-        0%, 100% {
-            background-color: rgba(0, 0, 0, .3);
+        100%, 0% {
+            background-color: rgba(0, 0, 0, .2);
+            background-blend-mode: multiply;
         }
-        16.66%, 50% {
-            background-color: rgba(0, 0, 0, .3);
+        16.67% {
+            background-color: rgba(0, 0, 0, .2);
+            background-blend-mode: multiply;
         }
-        33.33%, 66.66% {
-            background-color: rgba(255, 255, 255, .3);
+        33.34% {
+            background-color: rgba(255, 255, 255, .2);
+            background-blend-mode: overlay;
         }
-        50%, 83.33% {
-            background-color: rgba(0, 0, 0, .3);
+        50% {
+            background-color: rgba(0, 0, 0, .2);
+            background-blend-mode: multiply;
         }
-        66.66% {
-            background-color: rgba(255, 255, 255, .3);
+        66.67% {
+            background-color: rgba(255, 255, 255, .2);
+            background-blend-mode: overlay;
+        }
+        83.35% {
+            background-color: rgba(255, 255, 255, .2);
+            background-blend-mode: overlay;
+        }
+        95% {
+            background-color: rgba(255, 255, 255, .2);
+            background-blend-mode: overlay;
+        }
+    }
+
+    @keyframes title-color-change {
+        100%, 0% {
+            color: #fff;
+        }
+        16.67% {
+            color: #fff;
+        }
+        33.34% {
+            color: #000;
+        }
+        50% {
+            color: #fff;
+        }
+        66.67% {
+            color: #000;
+        }
+        83.35% {
+            color: #000;
+        }
+        95% {
+            color: #000;
         }
     }
 
     .container {
-        animation: color-change 30s linear infinite;
+        animation: color-change 30s ease-in infinite;
         width: 500pt;
         position: fixed;
         top: 50%;
@@ -113,17 +154,18 @@
         backdrop-filter: blur(30px);
         -webkit-backdrop-filter: blur(30px);
         border-radius: 10pt;
-        box-shadow: 0 2pt 50pt rgba(0, 0, 0, 0.5),
-        0 2pt 10pt rgba(0, 0, 0, 0.7);
+        box-shadow: 0 2pt 50pt rgba(0, 0, 0, 0.3), 0 2pt 30pt rgba(0, 0, 0, 0.5);
         padding: 1em;
         color: #fff;
-        font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+        font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', sans-serif;
+        font-weight: 100;
         display: flex;
         flex-direction: column;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .container h2 {
+        animation: title-color-change 30s ease-in infinite;
         indent: 0;
         margin: 0 0 10pt 0;
         font-weight: 500;
@@ -155,7 +197,32 @@
         height: 100%;
         padding: 30pt;
         box-sizing: border-box;
-        background: rgba(255, 255, 255, 0.05);
+        animation: box-color-change 30s ease-in infinite;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    @keyframes box-color-change {
+        100%, 0% {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        16.67% {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        33.34% {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        50% {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        66.67% {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        83.35% {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        95% {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
     }
 
     a {
@@ -179,19 +246,21 @@
     }
 
     @media (max-width: 1100px) {
-       .container {
-           width: 100%;
-           height: 100%;
-           border: none;
-           box-shadow: none;
-           display: block;
-           position: fixed;
-       }
+        .container {
+            width: 100%;
+            height: 100%;
+            border: none;
+            box-shadow: none;
+            display: block;
+            position: fixed;
+        }
+
         .container h2 {
             font-size: 60pt;
             height: auto;
             margin: 40pt 0 40pt 0;
         }
+
         .container ul {
             padding: 0 10pt 0 10pt;
 
@@ -205,7 +274,7 @@
 <figure></figure>
 <figure></figure>
 <article class="container">
-    <h2>cocoamatic</h2>
+    <h2>@cocoamatic</h2>
     <ul>
         <li><a target="_blank" href="https://twitter.com/cocoa_box"><img
                 src="twitter2.png"
