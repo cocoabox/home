@@ -75,7 +75,26 @@
         background-image: url(ky.jpg);
     }
 
+    @keyframes color-change {
+        0%, 100% {
+            background-color: rgba(0, 0, 0, .3);
+        }
+        16.66%, 50% {
+            background-color: rgba(0, 0, 0, .3);
+        }
+        33.33%, 66.66% {
+            background-color: rgba(255, 255, 255, .3);
+        }
+        50%, 83.33% {
+            background-color: rgba(0, 0, 0, .3);
+        }
+        66.66% {
+            background-color: rgba(255, 255, 255, .3);
+        }
+    }
+
     .container {
+        animation: color-change 30s linear infinite;
         width: 500pt;
         position: fixed;
         top: 50%;
