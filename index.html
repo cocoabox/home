@@ -1,7 +1,197 @@
 <html>
-    <head>
-    </head>
-    <body>hello world!
-        <a rel="me" href="https://mastodon.social/@cocoamatic">Mastodon</a>
-    </body>
+<head>
+    <link rel="me" href="https://mastodon.social/@cocoamatic"/>
+</head>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #000;
+    }
+
+    .crossfade > figure {
+        animation: imageAnimation 30s linear infinite 0s;
+        backface-visibility: hidden;
+        background-size: cover;
+        background-position: center center;
+        color: transparent;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    @keyframes imageAnimation {
+        0% {
+            animation-timing-function: ease-in;
+            opacity: 0
+        }
+        8% {
+            animation-timing-function: ease-out;
+            opacity: 1
+        }
+        17% {
+            opacity: 1
+        }
+        25% {
+            opacity: 0
+        }
+        100% {
+            opacity: 0
+        }
+    }
+
+
+    .crossfade > figure:nth-child(1) {
+        background-image: url(wo.jpg);
+    }
+
+    .crossfade > figure:nth-child(2) {
+        animation-delay: 6s;
+        background-image: url(pi.jpg);
+    }
+
+    .crossfade > figure:nth-child(3) {
+        animation-delay: 12s;
+        background-image: url(ha2.png);
+    }
+
+    .crossfade > figure:nth-child(4) {
+        animation-delay: 18s;
+        background-image: url(im3.jpg);
+    }
+
+    .crossfade > figure:nth-child(5) {
+        animation-delay: 24s;
+        background-image: url(ky.jpg);
+    }
+
+    .container {
+        width: 500pt;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, .3);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border-radius: 10pt;
+        box-shadow: 0 2pt 50pt rgba(0, 0, 0, 0.5),
+        0 2pt 10pt rgba(0, 0, 0, 0.7);
+        padding: 1em;
+        color: #fff;
+        font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .container h2 {
+        indent: 0;
+        margin: 0 0 10pt 0;
+        font-weight: 500;
+        font-size: 25pt;
+        text-align: center;
+        height: 40pt;
+    }
+
+    .container ul {
+        padding: 0;
+        margin: 0;
+        height: 90%;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10pt;
+        align-content: flex-start;
+        list-style: none;
+    }
+
+    .container li {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        -webkit-flex-direction: column;
+        -webkit-justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 30pt;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    a {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        padding: 30pt;
+        box-sizing: border-box;
+    }
+
+    span {
+        position: absolute;
+        top: -1000px;
+        left: -1000px;
+    }
+
+    img {
+        display: inline-block;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    @media (max-width: 1100px) {
+       .container {
+           width: 100%;
+           height: 100%;
+           border: none;
+           box-shadow: none;
+           display: block;
+           position: fixed;
+       }
+        .container h2 {
+            font-size: 60pt;
+            height: auto;
+            margin: 40pt 0 40pt 0;
+        }
+        .container ul {
+            padding: 0 10pt 0 10pt;
+
+        }
+    }
+</style>
+<body class="crossfade">
+<figure></figure>
+<figure></figure>
+<figure></figure>
+<figure></figure>
+<figure></figure>
+<article class="container">
+    <h2>cocoamatic</h2>
+    <ul>
+        <li><a target="_blank" href="https://twitter.com/cocoa_box"><img
+                src="twitter2.png"
+                alt="twitter logo"/><span>cocoa_box@twitter</span></a></li>
+        <li><a target="_blank" href="https://mastodon.social/%40cocoamatic"><img
+                src="mastodon.png"
+                alt="mastodon logo"/><span>mastodon</span></a></li>
+        <li><a target="_blank" href="https://www.instagram.com/cocoamatic/"><img
+                img src="instagram.png" alt="instagram logo"/><span>instagram</span></a>
+        </li>
+        <li><a target="_blank" href="https://www.threads.net/%40cocoamatic"><img
+                src="threads.png"
+                alt="threads logo"/><span>threads</span></a></li>
+    </ul>
+</article>
+</body>
 </html>
