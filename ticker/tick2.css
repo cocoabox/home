@@ -1,0 +1,133 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #000;
+    color: white;
+    font-size: 25pt;
+    font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+#items {
+    list-style: none;
+    padding: .5em;
+    margin: 0;
+    height: 100vh; /* Fills the entire screen height */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+#items li {
+    height: 100%;
+    display: none; /* Hide all items initially */
+    align-items: center;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+#items li article {
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(100%);
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+article b {
+    padding-right: .5em;
+    color: orange;
+    font-weight: bold;
+}
+
+i {
+    color: gold;
+    font-style: normal;
+}
+
+i.green {
+    color: lime;
+}
+
+#items li article.active {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+#items li article.inactive {
+    opacity: 0;
+}
+
+#items li article.fade-out {
+    animation-name: fadeOut;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#items li article.flip-out {
+    animation-name: flipOut;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+}
+
+@keyframes flipOut {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(90deg);
+    }
+}
+
+#items li article.fade-out.marquee {
+    animation-name: fadeOut;
+    transform: translateX(var(--final-translateX));
+}
+
+#items li article.flip-out.marquee {
+    animation-name: flipOutEx;
+    transform: translateX(var(--final-translateX));
+}
+
+@keyframes flipOutEx {
+    from {
+        transform: translateX(var(--final-translateX)) rotateX(0deg);
+    }
+    to {
+        transform: translateX(var(--final-translateX)) rotateX(90deg);
+    }
+}
+
+
+#items li article.slide-in {
+    animation-name: slideIn;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+#items li article.marquee {
+    animation-name: marqueeLeft;
+    animation-timing-function: linear;
+}
+
+@keyframes marqueeLeft {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(var(--final-translateX));
+    }
+}
